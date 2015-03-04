@@ -5,6 +5,7 @@
 *.suo
 *.user
 test.config.ps1
+build.config.ps1
 *.sln.docstates
 
 # Build results

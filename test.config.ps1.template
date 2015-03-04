@@ -3,4 +3,4 @@
 #so that the required nested modules can be found and imported.
 #copy this file and name it test.config.ps1 in order to enable it
 #example:
-#$env:PSModulePath += 'c:\dev'
+#$env:PSModulePath += ';c:\dev\AetherCred\bin'

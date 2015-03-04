@@ -1,9 +1,8 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 $private:here = Split-Path $MyInvocation.MyCommand.Path -Parent
-$private:modulePathRelative = (Join-Path (Split-Path $MyInvocation.MyCommand.Path -Parent) 'GpLog.psd1')
-$private:modulePathAbsolute = [System.IO.Path]::GetFullPath($modulePathRelative);
+$private:modulePath = (Get-ChildItem -Path $here -Filter *.psd1)[0].FullName
 if((Test-Path (Join-Path $here 'test.config.ps1'))) {
     . $here\test.config.ps1
 }
-Import-Module $private:modulePathAbsolute -Force -DisableNameChecking
+Import-Module $private:modulePath -Force -DisableNameChecking

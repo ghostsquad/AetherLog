@@ -1,7 +1,7 @@
 function AddConsoleLogAppender {
     param(
         [log4net.Core.Level]$logLevelThreshold = [log4net.Core.Level]::Debug,
-        [string]$logPattern = "%date{ISO8601} [%thread] %-5level [%ndc] - %message%newline"
+        [string]$logPattern = "%date{ISO8601} %-5level [%ndc] - %message%newline"
     )
 
     function AddMapping {

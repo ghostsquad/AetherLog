@@ -2,7 +2,7 @@ function Add-FileLogAppender{
     [CmdletBinding()]
     param (
         [log4net.Core.Level]$logLevelThreshold = [log4net.Core.Level]::Info,
-        [string]$logPattern = "%date{ISO8601} [%thread] %-5level [%ndc] - %message%newline",
+        [string]$logPattern = "%date{ISO8601} %-5level [%ndc] - %message%newline",
         [string]$logPath = (Join-Path $PSScriptRoot "logs"),
         [string]$logFile = ((Split-Path $MyInvocation.PSCommandPath -Leaf) `
                 + ([DateTime]::UtcNow.ToString("s") -replace ":","-") + "Z.log"),
